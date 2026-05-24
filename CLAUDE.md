@@ -10,6 +10,10 @@
 - Avoid patches and shims. Always prefer native options exposed by the plugin before working around missing behaviour.
 - When adding or modifying plugins, verify compatibility with Neovim 0.12+.
 
+## Workflow
+
+Never modify files or create commits without first drafting a plan and getting explicit approval.
+
 ## Commit style
 
 `[scope] Short description.`
