@@ -11,13 +11,24 @@ return {
   },
   opts = {
     default_component_configs = {
-      -- This removes the icon column entirely
       icon = {
         enabled = false,
       },
-      -- Optional: clean up the indentation markers if you want a pure text look
       indent = {
         with_markers = false,
+      },
+      git_status = {
+        symbols = {
+          added     = "A",
+          modified  = "M",
+          deleted   = "D",
+          renamed   = "R",
+          untracked = "?",
+          ignored   = "-",
+          unstaged  = "!",
+          staged    = "S",
+          conflict  = "C",
+        },
       },
     },
     filesystem = {
