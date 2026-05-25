@@ -1,0 +1,12 @@
+; LLVM IR sample
+define i32 @greet(ptr %name) {
+entry:
+  %msg = alloca [13 x i8], align 1
+  ret i32 0
+}
+
+define i32 @main() {
+entry:
+  %result = call i32 @greet(ptr null)
+  ret i32 %result
+}
