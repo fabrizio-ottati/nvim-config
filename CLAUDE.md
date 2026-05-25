@@ -14,6 +14,8 @@
 
 Never modify files or create commits without first drafting a plan and getting explicit approval.
 
+After modifying any plugin config, run `:source test/run.lua` and confirm all tests pass before committing.
+
 ## Commit style
 
 `[scope] Short description.`
