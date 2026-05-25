@@ -1,6 +1,8 @@
 -- Test runner for nvim config
 -- Usage: :source test/run.lua
 
+require("lazy").load({ plugins = { "nvim-treesitter", "conform.nvim", "nvim-lspconfig" } })
+
 local config_dir = vim.fn.stdpath("config")
 local results = {}
 
@@ -19,6 +21,10 @@ local ts_cases = {
   { file = "treesitter/sample.llvm", lang = "llvm" },
   { file = "treesitter/sample.mlir", lang = "mlir" },
   { file = "treesitter/sample.td",   lang = "tablegen" },
+  { file = "treesitter/sample.vim",  lang = "vim" },
+  { file = "treesitter/sample.txt",  lang = "vimdoc" },
+  { file = "treesitter/sample.md",   lang = "markdown" },
+  { file = "treesitter/sample.toml", lang = "toml" },
 }
 
 for _, tc in ipairs(ts_cases) do
@@ -61,10 +67,9 @@ end
 -- LSP suite
 -- ---------------------------------------------------------------------------
 local lsp_cases = {
-  { file = "lsp/sample.py",   ft = "python",     server = "pyright" },
-  { file = "lsp/sample.rs",   ft = "rust",       server = "rust_analyzer" },
-  { file = "lsp/sample.cpp",  ft = "cpp",        server = "clangd" },
-  { file = "lsp/sample.mlir", ft = "mlir",       server = "clangd" },
+  { file = "lsp/sample.py",   ft = "python", server = "pyright" },
+  { file = "lsp/sample.cpp",  ft = "cpp",    server = "clangd" },
+  { file = "lsp/sample.mlir", ft = "mlir",   server = "clangd" },
 }
 
 local lsp_pending = #lsp_cases

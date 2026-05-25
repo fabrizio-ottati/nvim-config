@@ -1,0 +1,14 @@
+*sample.txt*	Vimdoc sample
+
+================================================================================
+INTRODUCTION					*sample-intro*
+
+This is a sample vimdoc help file.
+
+COMMANDS					*sample-commands*
+
+:SampleCmd					*:SampleCmd*
+	Does something useful.
+
+================================================================================
+vim:tw=78:ft=help:norl:
