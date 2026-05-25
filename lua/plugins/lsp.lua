@@ -11,10 +11,9 @@ return {
 
       -- 2. Setup Mason-Lspconfig with handlers
       require("mason-lspconfig").setup({
-        ensure_installed = { 
-          "pyright", 
-          "rust_analyzer", 
-          "clangd" 
+        ensure_installed = {
+          "pyright",
+          "clangd",
         },
         -- This replaces the manual setup_handlers call
         handlers = {
