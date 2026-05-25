@@ -2,6 +2,11 @@
 
 Neovim 0.12+. Plugins managed by [lazy.nvim](https://github.com/folke/lazy.nvim). Leader key: `Space`.
 
+## Dependencies
+
+- [Neovim](https://neovim.io/) 0.12+
+- [`tree-sitter-cli`](https://github.com/tree-sitter/tree-sitter) — required by nvim-treesitter (`main` branch) to compile parsers. Install via `cargo install tree-sitter-cli` or from the [GitHub releases](https://github.com/tree-sitter/tree-sitter/releases). Note: `brew install tree-sitter` installs the C library only, not the CLI.
+
 ## Plugins
 
 ### Colorscheme
