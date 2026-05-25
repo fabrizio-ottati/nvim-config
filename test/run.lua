@@ -25,11 +25,11 @@ for _, tc in ipairs(ts_cases) do
   local path = config_dir .. "/test/" .. tc.file
   local bufnr = vim.fn.bufadd(path)
   vim.fn.bufload(bufnr)
-  local ok, err = pcall(vim.treesitter.get_parser, bufnr, tc.lang)
-  if ok then
+  local ok, parser = pcall(vim.treesitter.get_parser, bufnr, tc.lang)
+  if ok and parser ~= nil then
     pass("treesitter/" .. tc.lang)
   else
-    fail("treesitter/" .. tc.lang, err)
+    fail("treesitter/" .. tc.lang, ok and "parser not installed" or parser)
   end
   vim.api.nvim_buf_delete(bufnr, { force = true })
 end
