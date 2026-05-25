@@ -7,17 +7,9 @@ return {
     "HiPhish/rainbow-delimiters.nvim",
   },
   config = function()
-    local ts = require("nvim-treesitter")
-    
-    -- In the 0.12 rewrite, we use the direct module
-    ts.setup({
-      ensure_installed = {
-        "lua", "vim", "vimdoc", "python",
-        "c", "cpp", "bash",
-        "llvm", "mlir", "tablegen"
-      },
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
+    require("nvim-treesitter").setup()
+
+    -- Install parsers not bundled with Neovim (async, no-op if already installed)
+    require("nvim-treesitter").install({ "llvm", "mlir", "tablegen" })
   end,
 }
